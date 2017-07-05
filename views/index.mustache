@@ -10,8 +10,15 @@
     {{#users}}
       <li>FirstName: {{firstName}} </li>
       <li>LastName: {{lastName}} </li>
-      <li>Address:{{street}}<br>
-      {{city}}</li>
+      <li>Address:{{addresses[0].street}}<br>
+      {{addresses[0].city}}</li>
+      <form method='post' action='/delete/{{_id}}'>
+        <button type='submit'>delete</button>
+      </form>
+      <form method='post' action='/update/{{_id}}'>
+        <button type='submit'>update</button>
+      </form>
+      <hr>
     {{/users}}
     </ul>
 
