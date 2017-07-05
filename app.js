@@ -27,6 +27,21 @@ app.get('/', function(req, res){
 })
 })
 
+app.post("/createUser", function(req, res){
+  let fName = req.body.first_name;
+  let lName = req.body.last_name;
+  let street = req.body.street;
+  let city = req.body.city;
+  let user = new User({firstName: fName, lastName: lName, addresses:{city:city, street:street}});
+  user.save().then(function(){
+    console.log('A new user has been saved!');
+  }).catch(function(){
+    console.log("Something seems to be wrong");
+  })
+  res.redirect('/')
+})
+
+
 app.listen(3000, function(req, res){
   console.log('You are here.');
 })

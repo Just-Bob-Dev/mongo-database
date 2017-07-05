@@ -10,18 +10,21 @@
     {{#users}}
       <li>FirstName: {{firstName}} </li>
       <li>LastName: {{lastName}} </li>
-      <li>Address:{{addresses}}</li>
+      <li>Address:{{street}}<br>
+      {{city}}</li>
     {{/users}}
     </ul>
 
-    <form method="post" action='/'>
+    <form method="post" action='/createUser'>
       <p> Make New User </p>
       <label>first name</label>
       <input type="text" name="first_name" value=''>
       <label>last name</label>
       <input type="text" name="last_name" value=''>
-      <label>address</label>
-      <input type="text" name="Address" value=''>
+      <label>street</label>
+      <input type="text" name="street" value=''>
+      <label>city</label>
+      <input type="text" name="city" value=''>
       <button type="submit">create user</button>
   </body>
 </html>
