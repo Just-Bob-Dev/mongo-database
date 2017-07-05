@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Users with Mongoose</title>
+  </head>
+  <body>
+    <h1>Mongoose Users</h1>
+    <ul>
+    {{#users}}
+      <li>FirstName: {{firstName}} </li>
+      <li>LastName: {{lastName}} </li>
+      <li>Address:{{addresses}}</li>
+    {{/users}}
+    </ul>
+
+    <form method="post" action='/'>
+      <p> Make New User </p>
+      <label>first name</label>
+      <input type="text" name="first_name" value=''>
+      <label>last name</label>
+      <input type="text" name="last_name" value=''>
+      <label>address</label>
+      <input type="text" name="Address" value=''>
+      <button type="submit">create user</button>
+  </body>
+</html>
